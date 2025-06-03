@@ -19,10 +19,16 @@ int main()
     // To solve this issue, you allocate memory manually:
     v = malloc(sizeof(char) * 5); // malloc returns you the address of the allocated memory, which we can assign to our pointer
 
+    // !!! If anything goes wrong, e.g. there's not enough memory in the system to assign the array, malloc (and any get_* functions from cs50.h) will return you the NULL pointer
+    // NULL is essentially the `0` address, which is guaranteed by C to never be a valid address for any values.
+    if (v == NULL)
+    {
+        return 1;
+    }
+
     strcpy(v, u); // This then assign VALUES to the allocated memory
     printf("%s\n", v);
 
-    // !!! If anything goes wrong, e.g. there's not enough memory in the system to assign the array, malloc (and any get_* functions from cs50.h) will return you the NULL pointer, which you can check by somthing like `if (malloc(1e16) == NULL) return 1`. NULL is essentially the `0` address, which is guaranteed by C to never be a valid address for any values.
 
     // When you manually allocate memory with malloc, you also have to free the memory manually, so it does not have memory leak (i.e. using memory but made it inaccesible later)
     free(v);

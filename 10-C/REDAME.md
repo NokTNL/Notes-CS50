@@ -2,6 +2,11 @@
 - To compile files:
   - Go to the directory of your file
   - Run e.g.:
-    `make 0-hello` **(without `.c` !!)**
+    `make 0-hello LDLIBS="-lcs50"` **(without `.c` !!)**
   - File is compiled. Run:
     `./0-hello`
+- If you see an error like: `tried: 'libcs50-11.0.2.dylib' (no such file)`, run this:
+
+```
+export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
+```
