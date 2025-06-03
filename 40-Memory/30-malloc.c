@@ -26,4 +26,6 @@ int main()
 
     // When you manually allocate memory with malloc, you also have to free the memory manually, so it does not have memory leak (i.e. using memory but made it inaccesible later)
     free(v);
+
+    // To help debugging memory leaks, you may want to do use like Valgrind: https://valgrind.org
 }
