@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <cs50.h>
 /**
- * Singly linked lists
+ * Singly linked lists (DS)
  */
 // Normally you need to know in advance how much memory is needed for an array, otherwise you may access unauthorized memory and causes segmentation fault
 // Linked lists solve this issue. Here is a linked list node for integer values:
@@ -58,6 +58,6 @@ int main()
 // ** If we want to make it first-in-first-out (FIFO), then we will need to find the end of the list every single time before we append a new element. This makes adding a new element an O(n) process.
 
 /**
- * Doubly linked list
+ * Doubly linked list (DS)
  */
 // If we want to allow the list to move & extend in both direction, we can simply add an extra `prev` node to the linked list node.
